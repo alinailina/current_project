@@ -1,0 +1,150 @@
+@import "../../index.scss";
+
+.container {
+  @include container;
+
+  // Header
+  header {
+    @include page-header;
+  }
+
+  // Intro text
+  section {
+    @include margin-bottom;
+    p {
+      @include text;
+
+      a {
+        @include link;
+      }
+    }
+  }
+
+  // Shop
+  .list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    // Flex item
+    > div,
+    i {
+      width: 30%;
+
+      @include phone {
+        width: 45%;
+      }
+
+      @include tablet {
+        width: 30%;
+      }
+      @include margin-bottom;
+
+      img {
+        cursor: pointer;
+      }
+
+      > div {
+        // Info
+        > div {
+          margin-bottom: 15px;
+          p {
+            padding: 0;
+            margin: 5px 0;
+            @include small-text;
+          }
+        }
+
+        // Заказать
+        a {
+          @include text;
+          @include link;
+        }
+      }
+    }
+  }
+
+  .itemDetails {
+    display: flex;
+    justify-content: space-between;
+    // Double margin-bottom
+    margin-bottom: 200px;
+    @include phone {
+      margin-bottom: 100px;
+    }
+    @include tablet {
+      margin-bottom: 9vw;
+    }
+    @include desktop {
+      margin-bottom: 8vw;
+    }
+
+    // Img
+    > div:first-of-type {
+      width: 40%;
+
+      h1 {
+        display: none;
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+
+    // Info
+    > div:nth-of-type(2) {
+      width: 55%;
+
+      // Title
+      h1 {
+        @include heading;
+        margin: 0;
+      }
+
+      // Description
+      p {
+        @include text;
+      }
+
+      // Link
+      > div {
+        width: 50%;
+        margin: 25px 0 0;
+        a:first-of-type {
+          @include button;
+          margin-bottom: 25px;
+        }
+        a:nth-of-type(2) {
+          @include text;
+          @include link;
+        }
+      }
+    }
+
+    @include phone {
+      flex-direction: column;
+      // Img
+      > div:first-of-type {
+        h1 {
+          display: block;
+        }
+        width: 100%;
+      }
+      // Info
+      > div:nth-of-type(2) {
+        width: 100%;
+
+        // Title
+        h1 {
+          display: none;
+        }
+
+        // Link
+        > div {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

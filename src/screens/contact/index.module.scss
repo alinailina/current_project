@@ -1,0 +1,167 @@
+@import "../../index.scss";
+
+.container {
+  @include container;
+  margin-bottom: 100px;
+
+  @include phone {
+    margin-bottom: 50px;
+  }
+
+  header {
+    @include page-header;
+  }
+
+  // Info
+  > section:first-of-type {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+
+    p {
+      display: block;
+      width: 30%;
+      @include text;
+
+      span {
+        display: block;
+        @include small-text;
+
+        margin-bottom: 25px;
+      }
+    }
+
+    @include tablet {
+      flex-wrap: wrap;
+      p {
+        width: 45%;
+        span {
+          margin-bottom: 10px;
+        }
+      }
+    }
+
+    @include phone {
+      flex-direction: column;
+      p {
+        width: 100%;
+
+        span {
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+
+  // Или воспользуйтесь нашей формой
+  > section:nth-of-type(2) {
+    > h3 {
+      @include heading;
+      margin: 50px 0 25px;
+
+      @include phone {
+        margin: 0;
+      }
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+
+      > div {
+        display: flex;
+        justify-content: space-between;
+
+        label {
+          width: 45%;
+        }
+
+        @include phone {
+          flex-direction: column;
+          label {
+            width: 100%;
+          }
+        }
+      }
+
+      label {
+        //border: 1px solid red;
+        display: flex;
+        flex-direction: column;
+        @include small-text;
+
+        p {
+          font-size: 0.8em;
+          a {
+            @include link;
+          }
+        }
+
+        margin: 15px 0;
+        margin-bottom: 25px;
+
+        @include desktop {
+          margin-bottom: 35px 0;
+        }
+
+        input,
+        textarea {
+          @include text;
+          border: none;
+          padding: 10px 5px;
+          border: 1px solid $black;
+          background-color: inherit;
+          outline: none;
+          -webkit-appearance: none;
+          border-radius: 1px;
+          margin: 10px 0 0;
+        }
+
+        textarea {
+          //background-color: $gray;
+          resize: none;
+
+          &:focus {
+            height: 200px;
+            @include desktop {
+              height: 300px;
+            }
+          }
+        }
+      }
+
+      @include phone {
+        padding: 25px 0 50px;
+      }
+    }
+  }
+
+  // Мы в социальных сетях
+  > section:nth-of-type(3) {
+    padding: 50px 0 0;
+    @include phone {
+      padding: 0;
+    }
+
+    > h3 {
+      @include heading;
+      margin: 25px 0;
+
+      @include phone {
+        margin: 0;
+      }
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+      display: flex;
+      justify-content: space-between;
+      max-width: 50em;
+
+      li {
+        width: 35%;
+      }
+    }
+  }
+}

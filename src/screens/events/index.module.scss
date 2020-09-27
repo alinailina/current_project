@@ -1,0 +1,18 @@
+@import "../../index.scss";
+
+.container {
+  @include container;
+  margin-bottom: 100px;
+
+  @include phone {
+    margin-bottom: 50px;
+  }
+
+  header {
+    @include page-header;
+  }
+
+  p {
+    @include text;
+  }
+}

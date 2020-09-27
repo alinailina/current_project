@@ -1,0 +1,454 @@
+@import "../index.scss";
+
+nav {
+  background-color: white;
+  height: 80px;
+  @include desktop {
+    height: 12vh;
+  }
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  // Logo
+  > div {
+    a {
+      display: flex;
+      width: 45px;
+      margin: 0 20px;
+      @include desktop {
+        width: 3.5vw;
+        margin: 0 2vw;
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  // Menu
+  ul {
+    padding: 0;
+    margin: 0 20px 0 0;
+    @include desktop {
+      margin: 0 2vw;
+    }
+    list-style-type: none;
+    display: flex;
+    position: relative;
+
+    > li {
+      padding: 20px 10px;
+      margin: 0 10px;
+      display: flex;
+
+      p {
+        @include text;
+        margin: 0;
+        cursor: default;
+      }
+
+      a {
+        display: block;
+        @include text;
+        color: $black;
+        text-decoration: none;
+        &:hover {
+          color: $brown;
+        }
+        &.navlink-active {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    // Dropdown list
+    ul {
+      background-color: white;
+      position: absolute;
+      top: 70px;
+      left: 0;
+      flex-direction: column;
+      opacity: 0;
+      visibility: hidden;
+      transition: 0.25s ease;
+      padding: 0;
+      margin: 0;
+    }
+
+    // Display on hover
+    li:hover {
+      ul {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
+  // Toggle
+  .toggle {
+    display: none;
+  }
+
+  @include phone {
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+
+    .nav-logo {
+      position: fixed;
+      z-index: 2;
+      top: 15px;
+    }
+
+    ul {
+      background-color: $linen;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      position: fixed;
+      margin: 0;
+      top: 0;
+      right: -100%;
+      height: 100%;
+      width: 50%;
+      padding: 25px;
+      transition-property: all;
+      transition-duration: 0.55s;
+      transition-delay: 0;
+      transition-timing-function: cubic-bezier(0.66, 0, 0.34, 1);
+      z-index: 1;
+
+      &.active {
+        right: 0;
+      }
+
+      > li {
+        // border: 1px solid;
+        padding: 10px 0;
+        margin: 0;
+        display: flex;
+        width: 100%;
+
+        // Nav item with dropdown
+        &:first-of-type {
+          display: flex;
+          flex-direction: column;
+
+          p {
+            font-size: 1.25rem;
+            margin: 0;
+          }
+          // Dropdown list
+          ul {
+            width: 80%;
+            background-color: $linen;
+            position: relative;
+            top: 0;
+            left: 0;
+            flex-direction: column;
+            opacity: 1;
+            visibility: visible;
+            display: block;
+            padding: 0 20px;
+            li {
+              a {
+                font-size: 1.25rem;
+              }
+            }
+          }
+        }
+
+        // Other nav items
+        a {
+          display: block;
+          font-size: 1.25rem;
+          color: $black;
+          text-decoration: none;
+          &:hover,
+          &.navlink-active {
+            color: $black;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
+    .toggle {
+      //border: 1px solid red;
+      width: 40px;
+      height: 40px;
+      display: block;
+      position: fixed;
+      right: 15px;
+      top: 15px;
+      padding: 5px;
+      cursor: pointer;
+      z-index: 2;
+
+      .hamburger {
+        width: 100%;
+        height: 3px;
+        border-radius: 10px;
+        background: $black;
+        transition: all 0.5s ease;
+        position: relative;
+        top: 20px;
+
+        &:before,
+        &:after {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 3px;
+          background: $black;
+          border-radius: 10px;
+          transition: 0.5s;
+        }
+
+        &:before {
+          top: -12px;
+        }
+
+        &:after {
+          top: 12px;
+        }
+      }
+
+      &.active {
+        z-index: 2;
+        .hamburger {
+          background: rgba(0, 0, 0, 0);
+
+          &:before {
+            top: 0;
+            transform: rotate(45deg);
+            //background-color: $red;
+          }
+
+          &:after {
+            top: 0;
+            transform: rotate(135deg);
+            //background-color: $red;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Footer
+footer {
+  background-color: $black;
+  margin: 0;
+
+  > div {
+    //border: 1px solid red;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 0;
+
+    aside {
+      //border: 1px solid red;
+      width: 45%;
+
+      // Logo
+      h3 {
+        //border: 1px solid red;
+        font-size: 2rem;
+        line-height: 1.5;
+
+        @include tablet {
+          font-size: 2.5rem;
+        }
+
+        @include desktop {
+          font-size: 2.5vw;
+        }
+        margin-bottom: 25px;
+        margin: 0;
+        color: white;
+        text-transform: uppercase;
+        font-family: "Roboto", sans-serif;
+        font-weight: 300;
+      }
+
+      // Tagline
+      p {
+        //border: 1px solid red;
+        @include text;
+        margin-bottom: 25px;
+        color: white;
+      }
+
+      // Мы в социальных сетях
+      > div {
+        width: 100%;
+        padding: 25px 0 10px;
+        display: flex;
+        flex-direction: column;
+
+        h4 {
+          @include heading;
+          color: white;
+          margin: 0;
+        }
+
+        ul {
+          list-style-type: none;
+          padding: 10px 0;
+          @include desktop {
+            padding: 1vw 0;
+          }
+
+          display: flex;
+          justify-content: space-between;
+          width: 50%;
+          max-width: 20em;
+          li {
+            width: 33%;
+          }
+        }
+      }
+    }
+
+    form {
+      //border: 1px solid red;
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+
+      // Подпишитесь на нашу рассылку
+      h4 {
+        //border: 1px solid red;
+        @include heading;
+        margin: 0;
+        margin: 5px 0 25px;
+        color: white;
+      }
+
+      input[type="email"] {
+        @include text;
+        color: white;
+        border: none;
+        border-bottom: 1px solid white;
+        width: 20vw;
+        padding: 5px 0;
+        background-color: transparent;
+        transition: all 0.25s ease;
+        outline: none;
+        &::placeholder {
+          @include text;
+          color: white;
+        }
+        margin-right: 25px;
+      }
+
+      input[type="submit"] {
+        color: white;
+        border: 1px solid white;
+        &:hover {
+          color: $black;
+          background-color: white;
+          border: 1px solid white;
+        }
+      }
+    }
+
+    @include desktop {
+      padding: 4vw 0;
+    }
+
+    @include tablet {
+      flex-direction: column;
+
+      aside {
+        width: 80%;
+      }
+
+      form {
+        width: 100%;
+
+        input[type="email"] {
+          width: 35vw;
+        }
+      }
+    }
+
+    @include phone {
+      flex-direction: column;
+
+      aside {
+        width: 100%;
+      }
+
+      form {
+        width: 100%;
+        > div {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+
+          input[type="email"] {
+            width: 25em;
+            margin-bottom: 25px;
+          }
+        }
+      }
+    }
+  }
+
+  .copyright {
+    @include text;
+    //font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    color: white;
+    text-align: center;
+    padding: 25px 0 50px;
+    @include desktop {
+      padding: 0 0 3vw;
+    }
+    margin: 0;
+  }
+}
+
+// Submit button
+input[type="submit"] {
+  width: 200px;
+  font-size: 1.25rem;
+  text-align: center;
+
+  @include tablet {
+    font-size: 1.5rem;
+  }
+
+  @include desktop {
+    min-width: 200px;
+    width: 10vw;
+    font-size: 1.5vw;
+  }
+  a {
+    text-decoration: none;
+  }
+
+  border-radius: 2px;
+  padding: 8px 0;
+  background-color: transparent;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  outline: none;
+
+  background-color: none;
+  border: 1px solid $black;
+  color: $black;
+
+  &:hover {
+    background-color: $black;
+    border: 1px solid $black;
+    color: white;
+  }
+}

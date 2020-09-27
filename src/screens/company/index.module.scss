@@ -1,0 +1,123 @@
+@import "../../index.scss";
+
+// О нас
+.about {
+  @include container;
+  margin-bottom: 100px;
+  @include phone {
+    margin-bottom: 50px;
+  }
+
+  header {
+    @include page-header;
+  }
+
+  p {
+    @include text;
+  }
+  ul {
+    li {
+      @include text;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+// Как мы работаем
+.process {
+  header {
+    @include container;
+    @include page-header;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      //border: 1px solid;
+      &:nth-of-type(2),
+      &:nth-of-type(4) {
+        background-color: $linen;
+      }
+
+      > div {
+        @include container;
+        padding: 50px 0;
+        max-width: 100em;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+        // Icon
+        div:first-of-type {
+          // border: 1px solid;
+          width: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        // Text
+        div:nth-of-type(2) {
+          width: 100%;
+          p {
+            display: block;
+            @include text;
+
+            a {
+              @include link;
+            }
+          }
+        }
+      }
+    }
+
+    @include phone {
+      padding: 0;
+      li {
+        > div {
+          flex-direction: column;
+          padding: 50px 0;
+
+          // Icon
+          div:first-of-type {
+            // border: 1px solid;
+            width: 80%;
+            max-width: 25em;
+          }
+
+          // Text
+          div:nth-of-type(2) {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Наши принципы
+.principles {
+  @include container;
+  margin-bottom: 100px;
+  @include phone {
+    margin-bottom: 50px;
+  }
+
+  header {
+    @include page-header;
+  }
+
+  p {
+    @include text;
+  }
+
+  ul {
+    list-style-type: disc;
+    li {
+      margin-bottom: 10px;
+      @include text;
+    }
+  }
+}
