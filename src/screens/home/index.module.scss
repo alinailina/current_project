@@ -3,84 +3,128 @@
 .container {
   // Hero screen
   .hero {
-    width: 100%;
     height: 80vh;
-    background-image: linear-gradient(
-        rgba(253, 200, 30, 0.1),
-        rgba(0, 0, 0, 0.25)
-      ),
-      url("../../assets/1.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    display: flex;
 
     > div {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 80%;
-      text-align: left;
+      width: 50%;
 
-      padding: 10px 25px;
-      border-radius: 10px;
+      &:first-of-type {
+        background-color: white;
 
-      h1 {
-        font-size: 5rem;
-        margin: 0;
-        position: relative;
-        left: -10px;
-        color: $black;
+        > div {
+          width: 80%;
+          height: 100%;
+          margin: 0 auto;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
 
-        text-transform: uppercase;
-        font-family: "Roboto", sans-serif;
-        font-weight: 400;
-        color: $dark-blue;
+          // Name
+          h1 {
+            font-size: 3rem;
+
+            @include desktop {
+              font-size: 4vw;
+            }
+            margin: 10px 0;
+            text-transform: uppercase;
+            font-family: "Roboto", sans-serif;
+            font-weight: 300;
+          }
+
+          // Tagline
+          p {
+            font-size: 1.5rem;
+            @include desktop {
+              font-size: 2vw;
+            }
+            margin: 10px 0;
+          }
+
+          // Links
+          > div {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+
+            // Подробнее о нас
+            a:first-of-type {
+              @include text;
+              @include link;
+              margin-right: 15px;
+            }
+
+            // Контакты
+            a:last-of-type {
+              text-decoration: none;
+              width: 200px;
+              @include text;
+              text-align: center;
+
+              @include desktop {
+                min-width: 200px;
+                width: 10vw;
+              }
+
+              border-radius: 2px;
+              padding: 8px 0;
+              background-color: $black;
+
+              transition: all 0.25s ease;
+              cursor: pointer;
+              outline: none;
+
+              background-color: none;
+              border: 1px solid $black;
+              color: white;
+
+              &:hover {
+                background-color: transparent;
+                border: 1px solid $black;
+                color: $black;
+              }
+            }
+
+            @include tablet {
+              flex-direction: column;
+              align-items: flex-start;
+              a:first-of-type {
+                margin-bottom: 25px;
+              }
+            }
+          }
+        }
       }
 
-      h2 {
-        font-size: 2rem;
-        margin: 10px 0;
-        max-width: 19em;
-        color: white;
+      img {
+        height: 80vh;
+        object-fit: cover;
       }
+    }
 
-      // Buttons
+    @include phone {
+      height: auto;
+      flex-direction: column-reverse;
+
       > div {
-        //border: 1px solid red;
-        display: flex;
-        position: relative;
-        top: 20px;
+        //border: 1px solid;
+        width: 100%;
 
-        a {
-          display: block;
-          width: 225px;
-          margin-right: 10px;
-
-          font-size: 1.25rem;
-          color: $black;
-          text-align: center;
-          text-decoration: none;
-          padding: 8px 0px;
-          border: none;
-          border-radius: 10px;
-          transition: all 0.25s ease;
-
-          &:first-of-type {
-            background-color: $linen;
+        &:first-of-type {
+          div {
+            width: 90%;
           }
+        }
 
-          &:nth-of-type(2) {
-            border: 1px solid white;
-            background-color: transparent;
-            color: white;
-          }
+        img {
+          margin-top: 80px;
+          margin-bottom: -10px;
+          height: 30vh;
+        }
 
-          &:hover {
-            background-color: $black;
-            color: white;
-            border: 1px solid $black;
-          }
+        &:first-of-type {
+          height: calc(100vh - 30vh - 70px);
         }
       }
     }
@@ -158,132 +202,3 @@
     text-align: center;
   }
 }
-
-// // Hero screen
-// .hero {
-//   height: 80vh;
-//   display: flex;
-
-//   > div {
-//     width: 50%;
-
-//     &:first-of-type {
-//       background-color: white;
-
-//       > div {
-//         width: 80%;
-//         height: 100%;
-//         margin: 0 auto;
-//         display: flex;
-//         flex-direction: column;
-//         justify-content: center;
-
-//         // Name
-//         h1 {
-//           font-size: 3rem;
-
-//           @include desktop {
-//             font-size: 4vw;
-//           }
-//           margin: 10px 0;
-//           text-transform: uppercase;
-//           font-family: "Roboto", sans-serif;
-//           font-weight: 300;
-//         }
-
-//         // Tagline
-//         p {
-//           font-size: 1.5rem;
-//           @include desktop {
-//             font-size: 2vw;
-//           }
-//           margin: 10px 0;
-//         }
-
-//         // Links
-//         > div {
-//           display: flex;
-//           align-items: center;
-//           margin: 10px 0;
-
-//           // Подробнее о нас
-//           a:first-of-type {
-//             @include text;
-//             @include link;
-//             margin-right: 15px;
-//           }
-
-//           // Контакты
-//           a:last-of-type {
-//             text-decoration: none;
-//             width: 200px;
-//             @include text;
-//             text-align: center;
-
-//             @include desktop {
-//               min-width: 200px;
-//               width: 10vw;
-//             }
-
-//             border-radius: 2px;
-//             padding: 8px 0;
-//             background-color: $black;
-
-//             transition: all 0.25s ease;
-//             cursor: pointer;
-//             outline: none;
-
-//             background-color: none;
-//             border: 1px solid $black;
-//             color: white;
-
-//             &:hover {
-//               background-color: transparent;
-//               border: 1px solid $black;
-//               color: $black;
-//             }
-//           }
-
-//           @include tablet {
-//             flex-direction: column;
-//             align-items: flex-start;
-//             a:first-of-type {
-//               margin-bottom: 25px;
-//             }
-//           }
-//         }
-//       }
-//     }
-
-//     img {
-//       height: 80vh;
-//       object-fit: cover;
-//     }
-//   }
-
-//   @include phone {
-//     height: auto;
-//     flex-direction: column-reverse;
-
-//     > div {
-//       //border: 1px solid;
-//       width: 100%;
-
-//       &:first-of-type {
-//         div {
-//           width: 90%;
-//         }
-//       }
-
-//       img {
-//         margin-top: 80px;
-//         margin-bottom: -10px;
-//         height: 30vh;
-//       }
-
-//       &:first-of-type {
-//         height: calc(100vh - 30vh - 70px);
-//       }
-//     }
-//   }
-// }

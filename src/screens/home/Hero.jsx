@@ -1,9 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import styles from "./index.module.scss";
 
 const Hero = () => {
   return (
-    <section>
+    <section className={styles.hero}>
       <div>
         <div>
           <h1>FabRevizion</h1>

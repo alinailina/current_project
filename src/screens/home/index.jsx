@@ -1,13 +1,13 @@
 import React from "react";
 import styles from "./index.module.scss";
 import Hero from "./Hero";
-import Hero1 from "./Hero1";
+
 import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
     <div className={styles.container}>
-      <Hero1 />
+      <Hero />
 
       <div>
         <div>

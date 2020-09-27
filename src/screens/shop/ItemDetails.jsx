@@ -12,7 +12,7 @@ const FullPost = (props, location) => {
   console.log(item);
   const { title, description, images } = item.fields;
   const img1 = images[0].fields.file.url;
-  const img2 = images[1].fields.file.url;
+  //const img2 = images[1].fields.file.url;
   console.log(location);
   return (
     <div className={styles.container}>
