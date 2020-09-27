@@ -8,7 +8,6 @@ const Home = () => {
   return (
     <div className={styles.container}>
       <Hero />
-
       <div>
         <div>
           <p>
