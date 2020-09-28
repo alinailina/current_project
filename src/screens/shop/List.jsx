@@ -1,5 +1,9 @@
 import React from "react";
+
+// Children
 import Item from "./Item";
+
+// Styles
 import styles from "./index.module.scss";
 
 const List = ({ shopItems }) => {

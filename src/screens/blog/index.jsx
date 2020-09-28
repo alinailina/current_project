@@ -14,20 +14,17 @@ const client = contentful.createClient({
   accessToken: process.env.REACT_APP_ACCESS_TOKEN,
 });
 
-const News = () => {
+const Blog = () => {
   const [entries, setEntries] = useState([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     setLoading(true);
-    const timer = setTimeout(() => {
-      client
-        .getEntries()
-        .then((response) => setEntries(response.items))
-        .catch(console.error);
-      setLoading(false);
-    }, 3000);
-    return () => clearTimeout(timer);
+    client
+      .getEntries()
+      .then((response) => setEntries(response.items))
+      .catch(console.error);
+    setLoading(false);
   }, []);
 
   const posts = [];
@@ -39,11 +36,11 @@ const News = () => {
 
   return (
     <div className={styles.container}>
-      <Header title="Новости" />
+      <Header title="Блог" />
       {loading && <SkeletonComponent />}
       {!loading && <Posts posts={posts} />}
     </div>
   );
 };
 
-export default News;
+export default Blog;

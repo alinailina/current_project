@@ -23,14 +23,12 @@
           // Name
           h1 {
             font-size: 3rem;
-
             @include desktop {
               font-size: 4vw;
             }
             margin: 10px 0;
             text-transform: uppercase;
-            font-family: "Roboto", sans-serif;
-            font-weight: 300;
+            font-family: "Poiret One", cursive;
           }
 
           // Tagline
@@ -93,6 +91,14 @@
                 margin-bottom: 25px;
               }
             }
+
+            @include phone {
+              flex-direction: column;
+              align-items: flex-start;
+              a:first-of-type {
+                margin-bottom: 25px;
+              }
+            }
           }
         }
       }
@@ -112,7 +118,7 @@
         width: 100%;
 
         &:first-of-type {
-          div {
+          > div {
             width: 90%;
           }
         }

@@ -8,10 +8,6 @@
     margin-bottom: 50px;
   }
 
-  header {
-    @include page-header;
-  }
-
   p {
     @include text;
   }

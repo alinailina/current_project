@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import SkeletonComponent from "./SkeletonComponent";
+import SkeletonComponent from "./Skeleton";
 
 // Children
 import Header from "../../components/Header";
@@ -21,14 +21,11 @@ const Shop = () => {
 
   useEffect(() => {
     setLoading(true);
-    const timer = setTimeout(() => {
-      client
-        .getEntries()
-        .then((response) => setEntries(response.items))
-        .catch(console.error);
-      setLoading(false);
-    }, 3000);
-    return () => clearTimeout(timer);
+    client
+      .getEntries()
+      .then((response) => setEntries(response.items))
+      .catch(console.error);
+    setLoading(false);
   }, []);
 
   // Filter shop items

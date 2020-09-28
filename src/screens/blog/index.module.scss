@@ -7,11 +7,6 @@
     margin-bottom: 50px;
   }
 
-  // Header
-  header {
-    @include page-header;
-  }
-
   // All posts
   .posts {
     display: flex;

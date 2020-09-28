@@ -6,7 +6,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 
-// Layout
+// Home
 import Home from "./screens/home/index.jsx";
 
 // About
@@ -22,8 +22,8 @@ import ItemDetails from "./screens/shop/ItemDetails";
 import Events from "./screens/events";
 
 // Blog
-import News from "./screens/news";
-import FullPost from "./screens/news/FullPost";
+import Blog from "./screens/blog";
+import FullPost from "./screens/blog/FullPost";
 
 // Contact
 import Contact from "./screens/contact";
@@ -49,12 +49,11 @@ function App() {
         <Route path="/events" component={Events} />
 
         {/* Blog */}
-        <Route path="/news" component={News} />
+        <Route path="/blog" component={Blog} />
         <Route path="/fullpost" component={FullPost} />
         {/* Contact */}
         <Route path="/contact" component={Contact} />
       </Switch>
-
       <Footer />
     </Router>
   );

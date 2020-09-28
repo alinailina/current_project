@@ -27,42 +27,6 @@ const Contact = () => {
         <h3>Или воспользуйтесь нашей формой обратной связи:</h3>
         <Form />
       </section>
-      <section>
-        <h3>Мы в социальных сетях:</h3>
-        <ul>
-          <li>
-            <a href="/">
-              <span>
-                <img
-                  src={require("../../assets/svgs/linkedin.svg")}
-                  alt="linkedin-icon"
-                />
-              </span>
-            </a>
-          </li>
-          <li>
-            <a href="/">
-              <span>
-                <img
-                  src={require("../../assets/svgs/facebook.svg")}
-                  alt="facebook-icon"
-                />
-              </span>
-            </a>
-          </li>
-
-          <li>
-            <a href="/">
-              <span>
-                <img
-                  src={require("../../assets/svgs/instagram.svg")}
-                  alt="instagram-icon"
-                />
-              </span>
-            </a>
-          </li>
-        </ul>
-      </section>
     </div>
   );
 };

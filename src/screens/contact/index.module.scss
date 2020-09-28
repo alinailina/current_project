@@ -8,10 +8,6 @@
     margin-bottom: 50px;
   }
 
-  header {
-    @include page-header;
-  }
-
   // Info
   > section:first-of-type {
     display: flex;

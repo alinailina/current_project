@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { BsHeart } from "react-icons/bs";
 
 const Item = ({ item }) => {
   const { title, images } = item.fields;
@@ -19,12 +20,17 @@ const Item = ({ item }) => {
           onMouseOut={() => {
             setImg(img1);
           }}
-          alt="item"
+          alt="shopping-item"
         />
       </Link>
       <div>
-        <p>{title}</p>
-        <p>Цена: 12345 ₽</p>
+        <p>
+          {title}
+          <span>
+            <BsHeart />
+          </span>
+        </p>
+        <p>12345 ₽</p>
       </div>
     </div>
   );

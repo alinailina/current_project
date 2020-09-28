@@ -1,5 +1,6 @@
 @import "../index.scss";
 
+// Nav
 nav {
   background-color: white;
   height: 80px;
@@ -16,6 +17,7 @@ nav {
       display: flex;
       width: 45px;
       margin: 0 20px;
+
       @include desktop {
         width: 3.5vw;
         margin: 0 2vw;
@@ -239,13 +241,40 @@ nav {
   }
 }
 
+// Header
+header {
+  h1 {
+    font-weight: 300;
+  }
+
+  @include phone {
+    padding: 150px 0 25px;
+    h1 {
+      font-size: 2rem;
+    }
+  }
+
+  @include tablet {
+    padding: 100px 0 25px;
+    h1 {
+      font-size: 2.5rem;
+    }
+  }
+
+  @include desktop {
+    padding: 100px 0 25px;
+    h1 {
+      font-size: 3vw;
+    }
+  }
+}
+
 // Footer
 footer {
-  background-color: $black;
   margin: 0;
+  background-color: $gray;
 
   > div {
-    //border: 1px solid red;
     width: 90%;
     margin: 0 auto;
     display: flex;
@@ -253,71 +282,92 @@ footer {
     padding: 50px 0;
 
     aside {
-      //border: 1px solid red;
       width: 45%;
 
       // Logo
       h3 {
-        //border: 1px solid red;
-        font-size: 2rem;
-        line-height: 1.5;
-
-        @include tablet {
-          font-size: 2.5rem;
-        }
-
-        @include desktop {
-          font-size: 2.5vw;
-        }
-        margin-bottom: 25px;
         margin: 0;
-        color: white;
+        margin-bottom: 25px;
+        font-size: 3rem;
+        @include desktop {
+          font-size: 4vw;
+        }
         text-transform: uppercase;
-        font-family: "Roboto", sans-serif;
-        font-weight: 300;
+        font-family: "Poiret One", cursive;
       }
 
       // Tagline
       p {
-        //border: 1px solid red;
-        @include text;
+        @include heading;
         margin-bottom: 25px;
-        color: white;
+      }
+
+      // Menu
+      > div:first-of-type {
+        display: flex;
+        justify-content: space-between;
+        ul {
+          list-style-type: none;
+          padding: 0;
+          width: 50%;
+          li {
+            a {
+              @include small-text;
+              color: $black;
+              text-decoration: none;
+              &:hover {
+                color: $brown;
+              }
+            }
+          }
+          &:nth-of-type(2) {
+            width: 40%;
+          }
+        }
       }
 
       // Мы в социальных сетях
-      > div {
+      > div:nth-of-type(2) {
         width: 100%;
         padding: 25px 0 10px;
         display: flex;
         flex-direction: column;
 
-        h4 {
+        p {
           @include heading;
-          color: white;
           margin: 0;
         }
 
         ul {
           list-style-type: none;
           padding: 10px 0;
+
           @include desktop {
             padding: 1vw 0;
           }
 
           display: flex;
           justify-content: space-between;
-          width: 50%;
-          max-width: 20em;
+          width: 40%;
+          max-width: 12em;
+
           li {
-            width: 33%;
+            a {
+              font-size: 2.5rem;
+              @include desktop {
+                font-size: 3.5vw;
+              }
+              color: $black;
+              &:hover {
+                color: $brown;
+              }
+            }
           }
         }
       }
     }
 
     form {
-      //border: 1px solid red;
       width: 50%;
       display: flex;
       flex-direction: column;
@@ -328,33 +378,30 @@ footer {
         @include heading;
         margin: 0;
         margin: 5px 0 25px;
-        color: white;
       }
 
       input[type="email"] {
         @include text;
-        color: white;
         border: none;
-        border-bottom: 1px solid white;
+        border-bottom: 1px solid $black;
         width: 20vw;
         padding: 5px 0;
         background-color: transparent;
         transition: all 0.25s ease;
         outline: none;
         &::placeholder {
-          @include text;
-          color: white;
+          @include small-text;
+          color: $black;
         }
         margin-right: 25px;
       }
 
       input[type="submit"] {
-        color: white;
-        border: 1px solid white;
+        border: 1px solid $black;
         &:hover {
-          color: $black;
-          background-color: white;
-          border: 1px solid white;
+          color: white;
+          background-color: black;
+          border: 1px solid $black;
         }
       }
     }
@@ -403,12 +450,16 @@ footer {
   }
 
   .copyright {
-    @include text;
-    //font-family: "Roboto", sans-serif;
     text-transform: uppercase;
-    color: white;
     text-align: center;
     padding: 25px 0 50px;
+    font-weight: 300;
+    @include text;
+
+    span {
+      font-family: "Poiret One", cursive;
+    }
+
     @include desktop {
       padding: 0 0 3vw;
     }
