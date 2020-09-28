@@ -2,21 +2,11 @@ import React from "react";
 import "./index.scss";
 import { Link } from "react-router-dom";
 import {
-  FaFacebookF,
-  FaLinkedinIn,
-  FaInstagram,
   FaInstagramSquare,
   FaLinkedin,
   FaFacebookSquare,
 } from "react-icons/fa";
 
-import {
-  AiOutlineLinkedin,
-  AiOutlineFacebook,
-  AiOutlineInstagram,
-} from "react-icons/ai";
-
-import { IoLogoLinkedin, IoLogoFacebook } from "react-icons/io";
 const Footer = () => {
   return (
     <footer>
