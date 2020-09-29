@@ -3,7 +3,7 @@ import styles from "./index.module.scss";
 
 import Hero from "./Hero";
 import Image from "./Image";
-import _4R from "./_4R";
+import Prince from "./prince";
 import { Link } from "react-router-dom";
 
 const Home = () => {
@@ -40,7 +40,7 @@ const Home = () => {
         <Link to="/shop">Перейти в магазин</Link>
       </div>
       <div className={styles.image3}></div>
-      <_4R />
+      <Prince />
       <div className={styles.end}>
         <p>
           Если ваши клиенты заинтересованы в более экологичных услугах и
