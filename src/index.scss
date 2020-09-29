@@ -3,6 +3,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poiret+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poiret+One&family=Spinnaker&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Arapey&family=Playfair+Display+SC&display=swap");
+
 body {
   font-family: "Roboto Mono", monospace;
   margin: 0;
@@ -18,12 +20,18 @@ $gray: #f3f3f3;
 $linen: #fff1e6;
 $brown: #ddbea9;
 $gray: #f0efeb;
+$green: #4b5f45;
+$yellow: #e19f00;
 // #e7d8c9;
 
 $danger: #d62828;
 $blue: #266f90;
 // rgb(38,111,144)
 $dark-blue: #223a46;
+
+@mixin highlight {
+  background: linear-gradient(to top, #ddbea9 40%, transparent 30%);
+}
 
 // Media queries
 @mixin phone {
@@ -144,7 +152,7 @@ $dark-blue: #223a46;
   }
 
   @include desktop {
-    font-size: 3vw;
+    font-size: 2.5vw;
   }
 }
 
@@ -157,9 +165,6 @@ $dark-blue: #223a46;
   }
 }
 
-@mixin highlight {
-  background: linear-gradient(to top, yellow 50%, transparent 50%);
-}
 img {
   width: 100%;
 }

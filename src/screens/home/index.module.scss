@@ -1,199 +1,165 @@
 @import "../../index.scss";
 
 .container {
-  // Hero screen
   .hero {
-    height: 80vh;
-    display: flex;
-
-    > div {
-      width: 50%;
-
-      &:first-of-type {
-        background-color: white;
-
-        > div {
-          width: 80%;
-          height: 100%;
-          margin: 0 auto;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-
-          // Name
-          h1 {
-            font-size: 3rem;
-            @include desktop {
-              font-size: 4vw;
-            }
-            margin: 10px 0;
-            text-transform: uppercase;
-            font-family: "Poiret One", cursive;
-          }
-
-          // Tagline
-          p {
-            font-size: 1.5rem;
-            @include desktop {
-              font-size: 2vw;
-            }
-            margin: 10px 0;
-          }
-
-          // Links
-          > div {
-            display: flex;
-            align-items: center;
-            margin: 10px 0;
-
-            // Подробнее о нас
-            a:first-of-type {
-              @include text;
-              @include link;
-              margin-right: 15px;
-            }
-
-            // Контакты
-            a:last-of-type {
-              text-decoration: none;
-              width: 200px;
-              @include text;
-              text-align: center;
-
-              @include desktop {
-                min-width: 200px;
-                width: 10vw;
-              }
-
-              border-radius: 2px;
-              padding: 8px 0;
-              background-color: $black;
-
-              transition: all 0.25s ease;
-              cursor: pointer;
-              outline: none;
-
-              background-color: none;
-              border: 1px solid $black;
-              color: white;
-
-              &:hover {
-                background-color: transparent;
-                border: 1px solid $black;
-                color: $black;
-              }
-            }
-
-            @include tablet {
-              flex-direction: column;
-              align-items: flex-start;
-              a:first-of-type {
-                margin-bottom: 25px;
-              }
-            }
-
-            @include phone {
-              flex-direction: column;
-              align-items: flex-start;
-              a:first-of-type {
-                margin-bottom: 25px;
-              }
-            }
-          }
-        }
-      }
-
-      img {
-        height: 80vh;
-        object-fit: cover;
-      }
-    }
-
-    @include phone {
-      height: auto;
-      flex-direction: column-reverse;
-
-      > div {
-        //border: 1px solid;
-        width: 100%;
-
-        &:first-of-type {
-          > div {
-            width: 90%;
-          }
-        }
-
-        img {
-          margin-top: 80px;
-          margin-bottom: -10px;
-          height: 30vh;
-        }
-
-        &:first-of-type {
-          height: calc(100vh - 30vh - 70px);
-        }
-      }
-    }
-  }
-
-  // CTA
-  > div:first-of-type {
-    background-color: $linen;
-    padding: 100px 0;
-    @include phone {
-      padding: 50px 0;
-    }
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
+    padding: 100px 0;
 
     > div {
       @include container;
-    }
+      text-align: center;
+      h1 {
+        display: block;
+        font-size: 4rem;
 
-    p {
-      margin-bottom: 50px;
-      @include phone {
-        font-size: 4vw;
+        text-transform: uppercase;
+        font-family: "Poiret One", cursive;
+        font-family: "Arapey", serif;
+        font-weight: 300;
       }
 
-      @include tablet {
-        font-size: 3vw;
+      p {
+        @include text;
       }
 
-      @include desktop {
-        font-size: 2.5vw;
+      > div {
+        width: 50%;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        //border: 1px solid red;
+
+        a:first-of-type {
+          @include link;
+          width: 55%;
+        }
+        a:nth-of-type(2) {
+          @include button;
+          width: 45%;
+        }
       }
     }
   }
 
-  // Text
-  > div:nth-of-type(2) {
+  .card {
+    padding: 100px 0;
+    text-align: center;
+
+    p {
+      display: block;
+      @include container;
+      @include large-text;
+
+      margin-bottom: 50px;
+    }
+    a {
+      @include text;
+      @include link;
+    }
+  }
+
+  .image1 {
+    // Parallax
+    background-image: url("../../assets/1.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 50vh;
+    position: relative;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .image2 {
+    // Parallax
+    background-image: url("../../assets/11.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 50vh;
+    position: relative;
+
+    img {
+      width: 100%;
+    }
+  }
+  .image3 {
+    // Parallax
+    background-image: url("../../assets/20.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 50vh;
+    position: relative;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .text {
     @include container;
-    padding: 50px 0;
+    padding: 100px 0;
+    text-align: center;
+
+    h4 {
+      @include text;
+      font-weight: 300;
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
     p {
       @include text;
-      span {
-        font-style: oblique;
-      }
+      text-align: center;
     }
 
     ul {
+      list-style-type: none;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
       li {
-        @include text;
-        margin-bottom: 10px;
+        width: 20%;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        > div {
+          width: 30%;
+          margin: 0 auto;
+          img {
+            width: 100%;
+          }
+        }
+
         span {
-          font-style: oblique;
+          @include large-text;
         }
       }
     }
 
     a {
+      @include text;
       @include link;
     }
   }
 
+  .end {
+    @include container;
+    p {
+      @include text;
+      text-align: center;
+    }
+  }
   // Bottom link
   > a {
     display: block;
