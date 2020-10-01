@@ -11,7 +11,7 @@ const Process = () => {
         <li>
           <div>
             <div>
-              <img src={require("../../assets/svgs/step1.svg")} alt="" />
+              <img src={require("../../assets/svgs/icons2-01.svg")} alt="" />
             </div>
             <div>
               {" "}

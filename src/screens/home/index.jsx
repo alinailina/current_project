@@ -1,21 +1,34 @@
 import React from "react";
 import styles from "./index.module.scss";
 
-import Hero from "./Hero";
-import Image from "./Image";
 import Prince from "./prince";
 import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
     <div className={styles.container}>
-      <Hero />
-
-      <div className={styles.card}>
-        <p>Жалко выбрасывать качественные, но поврежденные текстильные вещи?</p>
+      <div className={styles.hero}>
+        <div>
+          <h1>Fabrevizion</h1>
+          <p>Новый взгляд на уход за текстилем</p>
+          <div>
+            <Link to="/about">Подробнее о нас</Link>
+            <Link to="/contact">Связаться</Link>
+          </div>
+        </div>
       </div>
-      <div className={styles.image2}></div>
-      <div className={styles.card}>
+      <div className={styles.textCard}>
+        <div>
+          <img src={require("../../assets/logo.svg")} alt="" />
+        </div>
+        <p>
+          Думаете, куда деть качественные, но поврежденные текстильные вещи?
+        </p>
+      </div>
+      <div className={styles.textCard}>
+        <div>
+          <img src={require("../../assets/logo.svg")} alt="" />
+        </div>
         <p>
           Мы предлагаем альтернативный экологичный уход полного цикла за
           использованным текстилем.
@@ -24,11 +37,12 @@ const Home = () => {
           Вы сдаете нам свой использованный текстиль - мы находим ему новое
           применение.
         </p>
-        <Link to="/shop">Как мы работаем</Link>
+        <div>
+          <Link to="/shop">Как мы работаем</Link>
+        </div>
       </div>
-
-      <Image />
-      <div className={styles.card}>
+      <div className={styles.img1}></div>
+      <div className={styles.textCard}>
         <p>
           Мы переработаем использованный текстиль с применением самых
           инновационных технологий, продлив тем самым его жизненный цикл.
@@ -39,14 +53,16 @@ const Home = () => {
         </p>
         <Link to="/shop">Перейти в магазин</Link>
       </div>
-      <div className={styles.image3}></div>
+      <div className={styles.img2}></div>
       <Prince />
-      <div className={styles.end}>
+      <div className={styles.textCard}>
         <p>
-          Если ваши клиенты заинтересованы в более экологичных услугах и
-          продуктах, инвесторы все больше проверяют социальные и экологические
-          показатели компании,а вы поставили перед собой амбициозные задачи по
-          реальному достижению{" "}
+          Ваши клиенты заинтересованы в более экологичных продуктах и услугах, а
+          инвесторы все больше ориентируются на социальные и экологические
+          показатели компании?{" "}
+        </p>{" "}
+        <p>
+          Вы поставили перед собой задачи по реальному достижению{" "}
           <a
             href="https://www.un.org/sustainabledevelopment/ru/about/development-agenda/"
             target="_blank"
@@ -54,18 +70,13 @@ const Home = () => {
           >
             Повестки устойчивого развития-2030
           </a>
-          , тогда мы Ваши единомышленники, союзники и надежные партнеры.
+          ? Тогда мы Ваши единомышленники, союзники и надежные партнеры.
         </p>
-
-        <p>
-          Мы стремимся к рентабельному, взаимовыгодному и честному партнерству в
-          бизнесе. Вместе мы сможем достичь устойчивого развития, минимизировав
-          наше наше воздействие на окружающую среду в полном соответствии с
-          Европейским зеленым курсом.
-        </p>
+        <div>
+          <Link to="/about">Подробнее о нас</Link>
+          <Link to="/contact">Связаться</Link>
+        </div>
       </div>
-
-      <Link to="/contact">Связаться с нами</Link>
     </div>
   );
 };
