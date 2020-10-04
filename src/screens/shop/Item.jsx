@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { BsHeart } from "react-icons/bs";
 
 const Item = ({ item }) => {
   const { title, images } = item.fields;
@@ -25,12 +24,12 @@ const Item = ({ item }) => {
       </Link>
       <div>
         <p>
-          {title}
           <span>
-            <BsHeart />
+            <img src={require("../../assets/branch.svg")} alt="" />
           </span>
+          {title}
         </p>
-        <p>12345 ₽</p>
+        <p>12345 руб.</p>
       </div>
     </div>
   );

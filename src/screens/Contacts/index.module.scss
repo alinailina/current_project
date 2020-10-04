@@ -7,6 +7,9 @@
   @include phone {
     margin-bottom: 50px;
   }
+  @include desktop {
+    margin-bottom: 10vw;
+  }
 
   // Info
   > section:first-of-type {
@@ -18,11 +21,13 @@
       display: block;
       width: 30%;
       @include text;
+      a {
+        @include link;
+      }
 
       span {
         display: block;
         @include small-text;
-
         margin-bottom: 25px;
       }
     }
@@ -87,7 +92,6 @@
         @include small-text;
 
         p {
-          font-size: 0.8em;
           a {
             @include link;
           }
@@ -126,37 +130,23 @@
         }
       }
 
+      // Отправить
+      input[type="submit"] {
+        @include button;
+        @include text;
+        font-family: "Roboto Mono", monospace;
+        font-weight: 300;
+        text-align: center;
+        width: 200px;
+        @include desktop {
+          min-width: 200px;
+          width: 10vw;
+          font-size: 1.5vw;
+        }
+      }
+
       @include phone {
         padding: 25px 0 50px;
-      }
-    }
-  }
-
-  // Мы в социальных сетях
-  > section:nth-of-type(3) {
-    padding: 50px 0 0;
-    @include phone {
-      padding: 0;
-    }
-
-    > h3 {
-      @include heading;
-      margin: 25px 0;
-
-      @include phone {
-        margin: 0;
-      }
-    }
-
-    ul {
-      list-style-type: none;
-      padding: 0;
-      display: flex;
-      justify-content: space-between;
-      max-width: 50em;
-
-      li {
-        width: 35%;
       }
     }
   }

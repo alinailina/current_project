@@ -7,6 +7,7 @@ import styles from "./index.module.scss";
 
 // Children
 import Header from "../../components/Header";
+import BackToTop from "../../components/BackToTop";
 
 const contentful = require("contentful");
 const client = contentful.createClient({
@@ -39,6 +40,7 @@ const Blog = () => {
       <Header title="Блог" />
       {loading && <SkeletonComponent />}
       {!loading && <Posts posts={posts} />}
+      <BackToTop />
     </div>
   );
 };

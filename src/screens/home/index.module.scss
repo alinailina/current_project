@@ -1,60 +1,139 @@
 @import "../../index.scss";
 
+$dot-size: 1px;
+$dot-space: 27px;
+
 .container {
   .hero {
-    background-color: $linen;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 100px 0;
+    padding: 100px 0 150px;
+    @include phone {
+      padding: 200px 0 150px;
+    }
+    @include desktop {
+      padding: 8vw 0;
+    }
 
     > div {
       @include container;
-      text-align: center;
-      h1 {
-        display: block;
-        font-size: 6rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
 
-        text-transform: uppercase;
-        font-family: "Poiret One", cursive;
+      // Illustration
+      > div:first-of-type {
+        width: 60%;
 
-        font-weight: 300;
+        @include phone {
+          width: 80%;
+        }
       }
 
+      // Title
+      > div:nth-of-type(2) {
+        display: flex;
+        align-items: center;
+
+        > div {
+          @include phone {
+            width: 10vw;
+          }
+
+          @include tablet {
+            width: 100px;
+          }
+
+          @include desktop {
+            width: 6vw;
+          }
+
+          img {
+            width: 100%;
+          }
+        }
+
+        h1 {
+          @include phone {
+            font-size: 10vw;
+          }
+
+          @include tablet {
+            font-size: 4rem;
+          }
+
+          @include desktop {
+            font-size: 4.5vw;
+          }
+
+          margin: 0 1vw;
+          font-family: "Lato", sans-serif;
+          font-weight: 100;
+          text-transform: uppercase;
+        }
+      }
+
+      // Tagline
       p {
         @include large-text;
+        text-align: center;
       }
 
-      > div {
+      // Links
+      > div:nth-of-type(3) {
         width: 50%;
-        margin: 0 auto;
         display: flex;
         align-items: center;
         justify-content: center;
-        //border: 1px solid red;
 
+        // Подробнее о нас
         a:first-of-type {
           @include text;
           @include link;
           width: 55%;
         }
+
+        // Связаться
         a:nth-of-type(2) {
           @include button;
           @include text;
           width: 45%;
         }
+
+        @include phone {
+          flex-direction: column;
+          width: 90%;
+
+          a {
+            width: 100%;
+            text-align: center;
+            &:first-of-type {
+              margin-bottom: 10px;
+            }
+          }
+        }
       }
     }
   }
 
-  .card {
+  .text {
+    border-top: 1px solid;
+    border-bottom: 1px solid;
     padding: 100px 0;
     text-align: center;
-    border: 1px solid;
+
+    // Img
     > div {
-      width: 15%;
+      width: 20%;
+      @include tablet {
+        width: 30%;
+      }
+      @include phone {
+        width: 40%;
+      }
       margin: 0 auto;
-      margin-bottom: 50px;
+      margin-bottom: 25px;
       img {
         width: 100%;
       }
@@ -64,34 +143,11 @@
       display: block;
       @include container;
       @include large-text;
-
       margin-bottom: 50px;
-    }
-    a {
-      @include text;
-      @include link;
-    }
-  }
 
-  .textCard {
-    padding: 100px 0;
-    text-align: center;
-    border: 1px solid;
-    > div {
-      width: 15%;
-      margin: 0 auto;
-      margin-bottom: 50px;
-      img {
-        width: 100%;
+      span {
+        @include highlight;
       }
-    }
-
-    p {
-      display: block;
-      @include container;
-      @include large-text;
-
-      margin-bottom: 50px;
 
       a {
         @include large-text;
@@ -103,111 +159,141 @@
       @include text;
       @include link;
     }
+  }
 
-    > div:nth-of-type(2) {
+  // Parallax
+  .parallaxImg1 {
+    // Parallax
+    background-image: url("../../assets/bg1.svg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 60vh;
+    position: relative;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .parallaxImg2 {
+    // Parallax
+    background-image: url("../../assets/bg2.svg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 60vh;
+    position: relative;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .text2 {
+    border-top: 1px solid $black;
+    > div {
+      @include container;
+      padding: 100px 0;
+      text-align: center;
+
+      > p {
+        @include text;
+        margin-bottom: 50px;
+      }
+
+      ul {
+        list-style-type: none;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        li {
+          width: 23%;
+          @include tablet {
+            width: 45%;
+          }
+          @include phone {
+            width: 45%;
+          }
+          margin-bottom: 50px;
+
+          // Img
+          > div {
+            width: 50%;
+            margin: 0 auto;
+            margin-bottom: 25px;
+            @include tablet {
+              width: 30%;
+            }
+            @include phone {
+              width: 40%;
+            }
+            img {
+              width: 100%;
+            }
+          }
+
+          // Title
+          > span {
+            @include large-text;
+          }
+
+          // Text
+          > p {
+            @include text;
+          }
+        }
+      }
+
+      a {
+        @include text;
+        @include link;
+      }
+
+      .link {
+        display: block;
+        margin-bottom: 50px;
+      }
+    }
+
+    // Links
+    .links {
       width: 50%;
       margin: 0 auto;
       display: flex;
       align-items: center;
       justify-content: center;
-      //border: 1px solid red;
 
+      // Подробнее о нас
       a:first-of-type {
         @include text;
         @include link;
         width: 55%;
       }
+
+      // Связаться
       a:nth-of-type(2) {
         @include button;
         @include text;
         width: 45%;
       }
-    }
-  }
 
-  .img1 {
-    // Parallax
-    background-image: url("../../assets/sheets.jpg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    height: 50vh;
-    position: relative;
-
-    img {
-      width: 100%;
-    }
-  }
-
-  .img2 {
-    // Parallax
-    background-image: url("../../assets/shirts.jpg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    min-height: 50vh;
-    position: relative;
-
-    img {
-      width: 100%;
-    }
-  }
-
-  .principles {
-    border: 1px solid;
-    > div {
-      @include container;
-      padding: 100px 0;
-      text-align: center;
-    }
-
-    h4 {
-      @include text;
-      font-weight: 300;
-      margin-bottom: 50px;
-    }
-
-    p {
-      @include text;
-    }
-
-    ul {
-      list-style-type: none;
-      padding: 0;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      li {
-        width: 23%;
-        margin-bottom: 50px;
-        @include tablet {
-          width: 45%;
-        }
-        @include phone {
-          width: 45%;
-        }
-        display: flex;
+      @include phone {
         flex-direction: column;
-        text-align: center;
-        > div {
-          width: 20%;
-          margin: 0 auto;
-          margin-bottom: 25px;
-          img {
-            width: 100%;
+        width: 90%;
+
+        a {
+          width: 100%;
+          text-align: center;
+          &:first-of-type {
+            margin-bottom: 10px;
           }
         }
-        span {
-          @include large-text;
-        }
       }
-    }
-
-    a {
-      @include text;
-      @include link;
     }
   }
 

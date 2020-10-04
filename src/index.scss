@@ -1,39 +1,13 @@
-// Fonts
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto+Mono:wght@200;300;400;500;600&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Poiret+One&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Poiret+One&family=Spinnaker&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Arapey&family=Playfair+Display+SC&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300&display=swap");
 
-body {
-  font-family: "Roboto Mono", monospace;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-weight: 300;
-  color: #323232;
-}
-
-// Colors
 $black: #202124;
-$gray: #f3f3f3;
 $linen: #fff1e6;
 $brown: #ddbea9;
 $gray: #f0efeb;
-$green: #4b5f45;
-$yellow: #e19f00;
-// #e7d8c9;
+$green: #a9d767;
+$yellow: #f9e76f;
 
-$danger: #d62828;
-$blue: #266f90;
-// rgb(38,111,144)
-$dark-blue: #223a46;
-
-@mixin highlight {
-  background: linear-gradient(to top, #ddbea9 40%, transparent 30%);
-}
-
-// Media queries
 @mixin phone {
   @media only screen and (max-width: 768px) {
     @content;
@@ -52,20 +26,22 @@ $dark-blue: #223a46;
   }
 }
 
-// Mixins
-@mixin child-container {
-  //border: 1px solid red;
-  margin: 0 auto;
-  width: 90vw;
-
-  @include desktop {
-    width: 70vw;
-  }
+body {
+  font-family: "Roboto Mono", monospace;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-weight: 200;
+  color: $black;
 }
 
-// Mixins
+// Text highlight
+@mixin highlight {
+  background: linear-gradient(to top, $yellow 25%, transparent 25%);
+}
+
+// Margins container
 @mixin container {
-  //border: 1px solid red;
   margin: 0 auto;
   width: 90vw;
 
@@ -74,34 +50,7 @@ $dark-blue: #223a46;
   }
 }
 
-@mixin page-header {
-  h1 {
-    font-weight: 400;
-  }
-
-  @include phone {
-    padding: 150px 0 25px;
-    h1 {
-      font-size: 2rem;
-    }
-  }
-
-  @include tablet {
-    padding: 100px 0 25px;
-    h1 {
-      font-size: 2.5rem;
-    }
-    font-family: "Poiret One", cursive;
-  }
-
-  @include desktop {
-    padding: 100px 0 25px;
-    h1 {
-      font-size: 3vw;
-    }
-  }
-}
-
+// Heading
 @mixin heading {
   font-size: 1.5rem;
   line-height: 1.5;
@@ -130,6 +79,7 @@ $dark-blue: #223a46;
   }
 }
 
+// Small text
 @mixin small-text {
   font-size: 1rem;
   line-height: 1.5;
@@ -142,7 +92,7 @@ $dark-blue: #223a46;
     font-size: 1.25vw;
   }
 }
-
+// Large text
 @mixin large-text {
   font-size: 1.5rem;
   line-height: 1.5;
@@ -156,12 +106,13 @@ $dark-blue: #223a46;
   }
 }
 
+// Link
 @mixin link {
   color: $black;
 
   &:hover {
     text-decoration: none;
-    color: $brown;
+    color: $green;
   }
 }
 
@@ -169,6 +120,7 @@ img {
   width: 100%;
 }
 
+// Button
 @mixin button {
   text-decoration: none;
   display: block;
@@ -176,18 +128,19 @@ img {
   @include text;
   text-align: center;
   color: $black;
-  padding: 8px 0;
-  background-color: none;
+  padding: 10px 5px;
+  background-color: $green;
   border: 1px solid $black;
   border-radius: 2px;
   transition: all 0.25s ease;
   cursor: pointer;
   outline: none;
+  font-family: "Roboto Mono", monospace;
+  font-weight: 300;
 
   &:hover {
-    background-color: $black;
+    background-color: $yellow;
     border: 1px solid $black;
-    color: white;
   }
   margin: 10px 0;
 }

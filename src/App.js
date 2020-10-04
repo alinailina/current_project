@@ -7,26 +7,26 @@ import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 
 // Home
-import Home from "./screens/home/index.jsx";
+import Home from "./screens/Home/index.jsx";
 
 // About
-import About from "./screens/company/About";
-import Process from "./screens/company/Process";
-import Principles from "./screens/company/Principles";
+import About from "./screens/Company/About";
+import Process from "./screens/Company/Process";
+import Principles from "./screens/Company/Principles";
 
 // Shop
-import Shop from "./screens/shop";
-import ItemDetails from "./screens/shop/ItemDetails";
+import Shop from "./screens/Shop";
+import ItemDetails from "./screens/Shop/ItemDetails";
 
 // Events
-import Events from "./screens/events";
+import Events from "./screens/Events";
 
 // Blog
-import Blog from "./screens/blog";
-import FullPost from "./screens/blog/FullPost";
+import Blog from "./screens/Blog";
+import FullPost from "./screens/Blog/FullPost";
 
 // Contact
-import Contact from "./screens/contact";
+import Contacts from "./screens/Contacts";
 
 function App() {
   return (
@@ -52,7 +52,7 @@ function App() {
         <Route path="/blog" component={Blog} />
         <Route path="/fullpost" component={FullPost} />
         {/* Contact */}
-        <Route path="/contact" component={Contact} />
+        <Route path="/contacts" component={Contacts} />
       </Switch>
       <Footer />
     </Router>

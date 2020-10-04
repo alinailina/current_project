@@ -13,7 +13,7 @@ const Navbar = () => {
     <nav>
       <div className="nav-logo">
         <NavLink to="/">
-          <img src={require("../assets/svgs/logo.svg")} alt="logo" />
+          <img src={require("../assets/logo-placeholder.svg")} alt="logo" />
         </NavLink>
       </div>
       <div
@@ -75,7 +75,7 @@ const Navbar = () => {
         </li>
         <li>
           <NavLink
-            to="contact"
+            to="contacts"
             onClick={toggleActive}
             activeClassName="navlink-active"
           >

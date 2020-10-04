@@ -18,8 +18,10 @@ nav {
       width: 45px;
       margin: 0 20px;
 
+      border-radius: 50px;
+
       @include desktop {
-        width: 3.5vw;
+        width: 4vw;
         margin: 0 2vw;
       }
 
@@ -57,7 +59,7 @@ nav {
         color: $black;
         text-decoration: none;
         &:hover {
-          color: $brown;
+          color: $green;
         }
         &.navlink-active {
           text-decoration: underline;
@@ -95,6 +97,7 @@ nav {
 
   @include phone {
     position: fixed;
+    top: 0;
     z-index: 1;
     width: 100%;
 
@@ -105,7 +108,7 @@ nav {
     }
 
     ul {
-      background-color: $linen;
+      background-color: $yellow;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
@@ -146,7 +149,7 @@ nav {
           // Dropdown list
           ul {
             width: 80%;
-            background-color: $linen;
+            background-color: $yellow;
             position: relative;
             top: 0;
             left: 0;
@@ -192,7 +195,7 @@ nav {
 
       .hamburger {
         width: 100%;
-        height: 3px;
+        height: 2px;
         border-radius: 10px;
         background: $black;
         transition: all 0.5s ease;
@@ -204,7 +207,7 @@ nav {
           content: "";
           position: absolute;
           width: 100%;
-          height: 3px;
+          height: 2px;
           background: $black;
           border-radius: 10px;
           transition: 0.5s;
@@ -243,9 +246,13 @@ nav {
 
 // Header
 header {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
   h1 {
     font-weight: 300;
-    text-align: center;
   }
 
   @include phone {
@@ -253,19 +260,31 @@ header {
     h1 {
       font-size: 2rem;
     }
+    > div {
+      width: 40px;
+      margin: 0 5px;
+    }
   }
 
   @include tablet {
-    padding: 100px 0 25px;
+    padding: 125px 0 50px;
     h1 {
       font-size: 2.5rem;
+    }
+    > div {
+      width: 55px;
+      margin: 0 10px;
     }
   }
 
   @include desktop {
-    padding: 100px 0 25px;
+    padding: 10vw 0 3vw;
     h1 {
       font-size: 3vw;
+    }
+    > div {
+      width: 5vw;
+      margin: 0 1vw;
     }
   }
 }
@@ -273,7 +292,7 @@ header {
 // Footer
 footer {
   margin: 0;
-  background-color: $gray;
+  background-color: $linen;
 
   > div {
     width: 90%;
@@ -282,35 +301,67 @@ footer {
     justify-content: space-between;
     padding: 50px 0;
 
-    aside {
+    > aside {
       width: 45%;
-
-      // Logo
-      h3 {
-        margin: 0;
-        margin-bottom: 25px;
-        font-size: 3rem;
-        @include desktop {
-          font-size: 4vw;
-        }
-        text-transform: uppercase;
-        font-family: "Poiret One", cursive;
+      @include phone {
+        width: 100%;
+      }
+      @include tablet {
+        width: 100%;
       }
 
-      // Tagline
-      p {
-        @include heading;
-        margin-bottom: 25px;
+      // Logo
+      > div:first-of-type {
+        display: flex;
+        align-items: center;
+
+        h3 {
+          font-family: "Lato", sans-serif;
+          font-weight: 100;
+          text-transform: uppercase;
+          margin: 0;
+
+          @include phone {
+            font-size: 10vw;
+          }
+
+          @include tablet {
+            font-size: 6vw;
+          }
+
+          @include desktop {
+            font-size: 5vw;
+          }
+        }
+
+        > div {
+          @include phone {
+            width: 10vw;
+          }
+          @include tablet {
+            width: 6vw;
+          }
+          @include desktop {
+            width: 5vw;
+          }
+
+          img {
+            width: 100%;
+          }
+          margin: 0 10px;
+        }
       }
 
       // Menu
-      > div:first-of-type {
+      > div:nth-of-type(2) {
         display: flex;
         justify-content: space-between;
+        max-width: 40em;
         ul {
           list-style-type: none;
-          padding: 0;
+          padding: 05px;
           width: 50%;
+
           li {
             a {
               @include small-text;
@@ -328,7 +379,7 @@ footer {
       }
 
       // Мы в социальных сетях
-      > div:nth-of-type(2) {
+      > div:nth-of-type(3) {
         width: 100%;
         padding: 25px 0 10px;
         display: flex;
@@ -349,18 +400,15 @@ footer {
 
           display: flex;
           justify-content: space-between;
-          width: 40%;
-          max-width: 12em;
+          width: 50%;
+          max-width: 20em;
 
           li {
+            width: 30%;
             a {
-              font-size: 2.5rem;
-              @include desktop {
-                font-size: 3.5vw;
-              }
-              color: $black;
-              &:hover {
-                color: $brown;
+              display: block;
+              img {
+                width: 100%;
               }
             }
           }
@@ -368,41 +416,77 @@ footer {
       }
     }
 
-    form {
-      width: 50%;
-      display: flex;
-      flex-direction: column;
+    // Form
+    > div {
+      form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 25px;
 
-      // Подпишитесь на нашу рассылку
-      h4 {
-        //border: 1px solid red;
-        @include heading;
-        margin: 0;
-        margin: 5px 0 25px;
-      }
-
-      input[type="email"] {
-        @include text;
-        border: none;
-        border-bottom: 1px solid $black;
-        width: 20vw;
-        padding: 5px 0;
-        background-color: transparent;
-        transition: all 0.25s ease;
-        outline: none;
-        &::placeholder {
-          @include small-text;
-          color: $black;
+        // Подпишитесь на нашу рассылку
+        p {
+          //border: 1px solid red;
+          @include heading;
+          margin: 0;
+          margin: 5px 0 25px;
         }
-        margin-right: 25px;
+
+        > div {
+          display: flex;
+          align-items: flex-start;
+          max-width: 40em;
+
+          label {
+            width: 60%;
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            margin-right: 10px;
+
+            input {
+              @include text;
+              padding: 10px 5px;
+              border: 1px solid $black;
+              background-color: inherit;
+              outline: none;
+              -webkit-appearance: none;
+              border-radius: 1px;
+              margin: 0;
+            }
+
+            p {
+              @include small-text;
+            }
+          }
+
+          input[type="submit"] {
+            border: 1px solid;
+            @include button;
+            background-color: $green;
+            width: 40%;
+            margin: 0;
+          }
+
+          @include phone {
+            flex-direction: column;
+            label {
+              width: 100%;
+            }
+          }
+        }
       }
 
-      input[type="submit"] {
-        border: 1px solid $black;
-        &:hover {
-          color: white;
-          background-color: black;
-          border: 1px solid $black;
+      // Graphic
+      > div {
+        width: 80%;
+        margin-left: auto;
+        img {
+          width: 100%;
+        }
+
+        @include tablet {
+          width: 60%;
         }
       }
     }
@@ -413,43 +497,14 @@ footer {
 
     @include tablet {
       flex-direction: column;
-
-      aside {
-        width: 80%;
-      }
-
-      form {
-        width: 100%;
-
-        input[type="email"] {
-          width: 35vw;
-        }
-      }
     }
 
     @include phone {
       flex-direction: column;
-
-      aside {
-        width: 100%;
-      }
-
-      form {
-        width: 100%;
-        > div {
-          display: flex;
-          flex-direction: column;
-          align-items: flex-start;
-
-          input[type="email"] {
-            width: 25em;
-            margin-bottom: 25px;
-          }
-        }
-      }
     }
   }
 
+  // © FABREVIZION, 2020.
   .copyright {
     text-transform: uppercase;
     text-align: center;
@@ -458,7 +513,8 @@ footer {
     @include text;
 
     span {
-      font-family: "Poiret One", cursive;
+      font-family: "Lato", sans-serif;
+      font-weight: 300;
     }
 
     @include desktop {
@@ -468,39 +524,10 @@ footer {
   }
 }
 
-// Submit button
-input[type="submit"] {
-  width: 200px;
-  font-size: 1.25rem;
+// Back to top btn
+.backToTop {
+  @include text;
+  @include link;
+  display: block;
   text-align: center;
-
-  @include tablet {
-    font-size: 1.5rem;
-  }
-
-  @include desktop {
-    min-width: 200px;
-    width: 10vw;
-    font-size: 1.5vw;
-  }
-  a {
-    text-decoration: none;
-  }
-
-  border-radius: 2px;
-  padding: 8px 0;
-  background-color: transparent;
-  transition: all 0.25s ease;
-  cursor: pointer;
-  outline: none;
-
-  background-color: none;
-  border: 1px solid $black;
-  color: $black;
-
-  &:hover {
-    background-color: $black;
-    border: 1px solid $black;
-    color: white;
-  }
 }

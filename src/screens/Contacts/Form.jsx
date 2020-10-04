@@ -47,7 +47,6 @@ const Form = () => {
           <Link to="/">политикой конфиденциальности сайта</Link>
         </p>
       </label>
-      <div data-netlify-recapture="true"></div>
       <input type="submit" value="Отправить" />
     </form>
   );

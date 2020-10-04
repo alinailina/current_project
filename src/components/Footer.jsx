@@ -1,19 +1,20 @@
 import React from "react";
-import "./index.scss";
 import { Link } from "react-router-dom";
-import {
-  FaInstagramSquare,
-  FaLinkedin,
-  FaFacebookSquare,
-} from "react-icons/fa";
+
+// Styles
+import "./index.scss";
 
 const Footer = () => {
   return (
     <footer>
       <div>
         <aside>
-          <h3>FabRevizion</h3>
-          <p>Новый взгляд на уход за текстилем</p>
+          <div>
+            <h3>Fabrevizion</h3>
+            <div>
+              <img src={require("../assets/branch2.svg")} alt="branch" />
+            </div>
+          </div>
           <div>
             <ul>
               <li>
@@ -40,7 +41,7 @@ const Footer = () => {
                 <Link to="blog">Блог</Link>
               </li>
               <li>
-                <Link to="contact">Контакты</Link>
+                <Link to="contacts">Контакты</Link>
               </li>
             </ul>
           </div>
@@ -50,29 +51,40 @@ const Footer = () => {
             <ul>
               <li>
                 <a href="/">
-                  <FaLinkedin />
+                  <img src={require("../assets/linkedin.svg")} alt="linkedin" />
                 </a>
               </li>
               <li>
                 <a href="/">
-                  <FaFacebookSquare />
+                  <img src={require("../assets/facebook.svg")} alt="facebook" />
                 </a>
               </li>
               <li>
                 <a href="/">
-                  <FaInstagramSquare />
+                  <img
+                    src={require("../assets/instagram.svg")}
+                    alt="instagram"
+                  />
                 </a>
               </li>
             </ul>
           </div>
         </aside>
-        <form>
-          <h4>Подпишитесь на нашу рассылку:</h4>
+        <div>
+          <form>
+            <p>Подпишитесь на нашу рассылку:</p>
+            <div>
+              <label>
+                <input type="email" />
+                <p>Адрес вашей электронной почты</p>
+              </label>
+              <input type="submit" value="Подписаться" />
+            </div>
+          </form>
           <div>
-            <input type="email" placeholder="Ваша почта" />
-            <input type="submit" value="Подписаться" />
+            <img src={require("../assets/box.svg")} alt="recycled-apparel" />
           </div>
-        </form>
+        </div>
       </div>
       <h5 className="copyright">
         © <span>Fabrevizion</span>, 2020.

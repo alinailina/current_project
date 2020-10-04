@@ -3,8 +3,12 @@
 .container {
   @include container;
   margin-bottom: 100px;
+
   @include phone {
     margin-bottom: 50px;
+  }
+  @include desktop {
+    margin-bottom: 10vw;
   }
 
   // All posts
@@ -26,6 +30,12 @@
         width: 100%;
       }
       margin-bottom: 50px;
+      @include tablet {
+        margin-bottom: 75px;
+      }
+      @include desktop {
+        margin-bottom: 5vw;
+      }
 
       > p {
         @include text;
@@ -67,7 +77,6 @@
   }
 
   // Full post
-
   p {
     @include text;
   }
@@ -82,10 +91,6 @@
   .description {
     @include small-text;
     margin-bottom: 50px;
-  }
-
-  a {
-    @include link;
   }
 
   .tags {

@@ -3,17 +3,44 @@
 // О нас
 .about {
   @include container;
-  margin-bottom: 100px;
+  margin-bottom: 150px;
+
   @include phone {
-    margin-bottom: 50px;
+    margin-bottom: 100px;
+  }
+  @include desktop {
+    margin-bottom: 10vw;
   }
 
-  p {
+  > p {
     @include text;
+
+    span {
+      @include highlight;
+    }
+
+    a {
+      @include link;
+    }
   }
+
   ul {
+    list-style-type: none;
+    padding: 0;
     li {
-      @include text;
+      display: flex;
+      align-items: flex-start;
+
+      > span {
+        @include large-text;
+        margin-right: 2vw;
+        padding: 15px 0;
+      }
+
+      > p {
+        @include text;
+      }
+
       margin-bottom: 10px;
     }
   }
@@ -21,87 +48,103 @@
 
 // Как мы работаем
 .process {
-  header {
-    @include container;
+  @include container;
+  margin-bottom: 100px;
+
+  @include phone {
+    margin-bottom: 50px;
   }
+  @include desktop {
+    margin-bottom: 10vw;
+  }
+
   ul {
     list-style: none;
     padding: 0;
 
     li {
-      //border: 1px solid;
-      &:nth-of-type(2),
-      &:nth-of-type(4) {
-        background-color: $linen;
-      }
+      padding: 50px 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
 
-      > div {
-        @include container;
-        padding: 50px 0;
-        max-width: 100em;
+      // Order num
+      span {
+        @include large-text;
         display: flex;
-        flex-direction: column;
-        justify-content: space-between;
         align-items: center;
+        justify-content: center;
+        border: 1px solid $black;
+        border-radius: 50%;
+        width: 75px;
+        height: 75px;
+        margin-bottom: 50px;
 
-        // Icon
-        div:first-of-type {
-          // border: 1px solid;
-          width: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
+        @include phone {
+          width: 50px;
+          height: 50px;
         }
 
-        // Text
-        div:nth-of-type(2) {
-          width: 100%;
-          p {
-            display: block;
-            @include text;
+        @include desktop {
+          width: 5vw;
+          height: 5vw;
+          margin-bottom: 5vw;
+        }
+      }
 
-            a {
-              @include link;
-            }
+      // Illustration
+      div:first-of-type {
+        width: 100%;
+        margin-bottom: 25px;
+        @include desktop {
+          margin-bottom: 2.5vw;
+        }
+      }
+
+      // Text
+      div:nth-of-type(2) {
+        width: 100%;
+
+        p {
+          display: block;
+          @include text;
+
+          a {
+            @include link;
           }
         }
       }
     }
+  }
 
-    @include phone {
-      padding: 0;
-      li {
-        > div {
-          flex-direction: column;
-          padding: 50px 0;
-
-          // Icon
-          div:first-of-type {
-            // border: 1px solid;
-            width: 80%;
-            max-width: 25em;
-          }
-
-          // Text
-          div:nth-of-type(2) {
-            width: 100%;
-          }
-        }
-      }
-    }
+  // Back to top
+  > a {
+    @include text;
+    @include link;
+    display: block;
+    text-align: center;
   }
 }
 
 // Наши принципы
 .principles {
   @include container;
-  margin-bottom: 100px;
+  margin-bottom: 150px;
+
   @include phone {
-    margin-bottom: 50px;
+    margin-bottom: 100px;
+  }
+  @include desktop {
+    margin-bottom: 10vw;
   }
 
   p {
     @include text;
+    .name {
+      font-family: "Lato", sans-serif;
+      font-weight: 300;
+    }
   }
 
   ul {

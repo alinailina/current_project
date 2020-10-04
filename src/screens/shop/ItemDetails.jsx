@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 // Children
-import Header from "../../components/Header";
 import Slider from "./Slider";
 
 // Styles
@@ -14,17 +13,33 @@ const FullPost = (props) => {
 
   return (
     <div className={styles.container}>
-      <Header title="" />
       <div className={styles.itemDetails}>
         <div>
-          <h1>{title}</h1>
+          <div className={styles.mobileTitle}>
+            <div>
+              <img src={require("../../assets/branch3.svg")} alt="" />
+            </div>
+            <h1>{title}</h1>
+            <div>
+              <img src={require("../../assets/branch2.svg")} alt="" />
+            </div>
+          </div>
           <Slider images={images} />
         </div>
 
         <div>
-          <h1>{title}</h1>
+          <div>
+            <div>
+              <img src={require("../../assets/branch3.svg")} alt="" />
+            </div>
+            <h1>{title}</h1>
+            <div>
+              <img src={require("../../assets/branch2.svg")} alt="" />
+            </div>
+          </div>
+
           <p>{description}</p>
-          <p>Цена: 12345 ₽</p>
+          <p>Цена: 12345 руб.</p>
           <div>
             <a href="mailto:info@fabrevizion.ru">Сделать заказ</a>
             <Link to="/shop">Обратно в галерею</Link>
