@@ -15,7 +15,7 @@ import Process from "./screens/Company/Process";
 import Principles from "./screens/Company/Principles";
 
 // Shop
-import Shop from "./screens/Shop";
+import Shop from "./screens/Shop/index.jsx";
 import ItemDetails from "./screens/Shop/ItemDetails";
 
 // Events
