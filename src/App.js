@@ -7,26 +7,26 @@ import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 
 // Home
-import Home from "./screens/Home/index.jsx";
+import Home from "./screens/home/index.jsx";
 
 // About
-import About from "./screens/Company/About";
-import Process from "./screens/Company/Process";
-import Principles from "./screens/Company/Principles";
+import About from "./screens/company/About";
+import Process from "./screens/company/Process";
+import Principles from "./screens/company/Principles";
 
 // Shop
-import Shop from "./screens/Shop/index.jsx";
-import ItemDetails from "./screens/Shop/ItemDetails";
+import Shop from "./screens/shop";
+import ItemDetails from "./screens/shop/ItemDetails";
 
 // Events
-import Events from "./screens/Events";
+import Events from "./screens/events";
 
 // Blog
-import Blog from "./screens/Blog";
-import FullPost from "./screens/Blog/FullPost";
+import Blog from "./screens/blog";
+import FullPost from "./screens/blog/FullPost";
 
 // Contact
-import Contacts from "./screens/Contacts";
+import Contacts from "./screens/contacts";
 
 function App() {
   return (
