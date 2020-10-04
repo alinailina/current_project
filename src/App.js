@@ -51,6 +51,7 @@ function App() {
         {/* Blog */}
         <Route path="/blog" component={Blog} />
         <Route path="/fullpost" component={FullPost} />
+
         {/* Contact */}
         <Route path="/contacts" component={Contacts} />
       </Switch>
