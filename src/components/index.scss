@@ -79,6 +79,7 @@ nav {
       transition: 0.25s ease;
       padding: 0;
       margin: 0;
+      z-index: 10;
     }
 
     // Display on hover
@@ -108,7 +109,7 @@ nav {
     }
 
     ul {
-      background-color: $yellow;
+      background-color: $linen;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
@@ -149,7 +150,7 @@ nav {
           // Dropdown list
           ul {
             width: 80%;
-            background-color: $yellow;
+            background-color: $linen;
             position: relative;
             top: 0;
             left: 0;
@@ -247,7 +248,6 @@ nav {
 // Header
 header {
   display: flex;
-
   align-items: center;
   justify-content: center;
 
@@ -260,20 +260,12 @@ header {
     h1 {
       font-size: 2rem;
     }
-    > div {
-      width: 40px;
-      margin: 0 5px;
-    }
   }
 
   @include tablet {
     padding: 125px 0 50px;
     h1 {
       font-size: 2.5rem;
-    }
-    > div {
-      width: 55px;
-      margin: 0 10px;
     }
   }
 
@@ -282,17 +274,12 @@ header {
     h1 {
       font-size: 3vw;
     }
-    > div {
-      width: 5vw;
-      margin: 0 1vw;
-    }
   }
 }
 
 // Footer
 footer {
   margin: 0;
-  background-color: $linen;
 
   > div {
     width: 90%;

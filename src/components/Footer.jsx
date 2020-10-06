@@ -10,10 +10,10 @@ const Footer = () => {
       <div>
         <aside>
           <div>
-            <h3>Fabrevizion</h3>
             <div>
-              <img src={require("../assets/branch2.svg")} alt="branch" />
+              <img src={require("../assets/cotton.svg")} alt="branch" />
             </div>
+            <h3>Fabrevizion</h3>
           </div>
           <div>
             <ul>

@@ -17,8 +17,11 @@ const About = () => {
       </p>
       <ul>
         <li>
-          <span role="img" aria-label="bullet-point">
-            〰️
+          <span>
+            <img
+              src={require("../../assets/bullet-point.svg")}
+              alt="bullet-point"
+            />
           </span>
           <p>
             Мы обеспечим правильную современную утилизацию отслужившего текстиля
@@ -26,8 +29,11 @@ const About = () => {
           </p>
         </li>
         <li>
-          <span role="img" aria-label="bullet-point">
-            〰️
+          <span>
+            <img
+              src={require("../../assets/bullet-point.svg")}
+              alt="bullet-point"
+            />
           </span>
           <p>
             Мы предложим нашим клиентам альтернативные текстильные материалы и
@@ -35,8 +41,11 @@ const About = () => {
           </p>
         </li>
         <li>
-          <span role="img" aria-label="bullet-point">
-            〰️
+          <span>
+            <img
+              src={require("../../assets/bullet-point.svg")}
+              alt="bullet-point"
+            />
           </span>
           <p>
             Наши дизайнеры продумают весь жизненный цикл новых изделий так,

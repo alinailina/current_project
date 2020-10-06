@@ -7,28 +7,19 @@ import styles from "./index.module.scss";
 const Home = () => {
   return (
     <div className={styles.container}>
-      <div className={styles.hero}>
-        <div>
+      <div className={styles.parallaxImg1}>
+        <div className={styles.hero}>
           <div>
-            <img src={require("../../assets/hero-graphic.svg")} alt="" />
-          </div>
-          <div>
-            <div>
-              <img src={require("../../assets/branch3.svg")} alt="" />
-            </div>
             <h1>Fabrevizion</h1>
+            <p>Новый взгляд на уход за текстилем</p>
             <div>
-              <img src={require("../../assets/branch2.svg")} alt="" />
+              <Link to="/about">Подробнее о нас</Link>
+              <Link to="/contacts">Связаться</Link>
             </div>
-          </div>
-
-          <p>Новый взгляд на уход за текстилем</p>
-          <div>
-            <Link to="/about">Подробнее о нас</Link>
-            <Link to="/contacts">Связаться</Link>
           </div>
         </div>
       </div>
+
       <div className={styles.text}>
         <div>
           <img src={require("../../assets/old-shirt.svg")} alt="used-apparel" />
@@ -52,7 +43,7 @@ const Home = () => {
           <Link to="/process">Как мы работаем</Link>
         </div>
       </div>
-      <div className={styles.parallaxImg1}></div>
+      <div className={styles.parallaxImg2}></div>
       <div className={styles.text}>
         <p>
           Мы переработаем использованный текстиль с применением{" "}
@@ -65,7 +56,7 @@ const Home = () => {
         </p>
         <Link to="/shop">Перейти в магазин</Link>
       </div>
-      <div className={styles.parallaxImg2}></div>
+      <div className={styles.parallaxImg3}></div>
       <div className={styles.text2}>
         <div>
           <p>

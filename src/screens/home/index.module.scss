@@ -1,20 +1,33 @@
 @import "../../index.scss";
 
-$dot-size: 1px;
-$dot-space: 27px;
-
 .container {
+  .parallaxImg1 {
+    // Parallax
+    background-image: url("../../assets/sheets.JPG");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 80vh;
+    @include phone {
+      min-height: 90vh;
+    }
+    position: relative;
+
+    img {
+      width: 100%;
+    }
+
+    display: flex;
+  }
+
   .hero {
+    border-top: 1px solid;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 100px 0 150px;
-    @include phone {
-      padding: 200px 0 150px;
-    }
-    @include desktop {
-      padding: 8vw 0;
-    }
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 100%;
 
     > div {
       @include container;
@@ -22,55 +35,26 @@ $dot-space: 27px;
       flex-direction: column;
       align-items: center;
 
-      // Illustration
-      > div:first-of-type {
-        width: 60%;
-
-        @include phone {
-          width: 80%;
-        }
-      }
-
       // Title
-      > div:nth-of-type(2) {
-        display: flex;
-        align-items: center;
-
-        > div {
-          @include phone {
-            width: 10vw;
-          }
-
-          @include tablet {
-            width: 100px;
-          }
-
-          @include desktop {
-            width: 6vw;
-          }
-
-          img {
-            width: 100%;
-          }
+      h1 {
+        @include phone {
+          font-size: 12vw;
         }
 
-        h1 {
-          @include phone {
-            font-size: 10vw;
-          }
+        @include tablet {
+          font-size: 5rem;
+        }
 
-          @include tablet {
-            font-size: 4rem;
-          }
+        @include desktop {
+          font-size: 6vw;
+        }
 
-          @include desktop {
-            font-size: 4.5vw;
-          }
-
-          margin: 0 1vw;
-          font-family: "Lato", sans-serif;
-          font-weight: 100;
-          text-transform: uppercase;
+        margin: 0 1vw;
+        font-family: "Lato", sans-serif;
+        font-weight: 100;
+        text-transform: uppercase;
+        @include phone {
+          margin-top: 10vw;
         }
       }
 
@@ -81,7 +65,7 @@ $dot-space: 27px;
       }
 
       // Links
-      > div:nth-of-type(3) {
+      > div {
         width: 50%;
         display: flex;
         align-items: center;
@@ -99,6 +83,10 @@ $dot-space: 27px;
           @include button;
           @include text;
           width: 45%;
+          background-color: transparent;
+          &:hover {
+            background-color: $green;
+          }
         }
 
         @include phone {
@@ -125,17 +113,19 @@ $dot-space: 27px;
 
     // Img
     > div {
-      width: 20%;
+      width: 15%;
       @include tablet {
-        width: 30%;
+        width: 25%;
       }
       @include phone {
-        width: 40%;
+        width: 35%;
       }
       margin: 0 auto;
-      margin-bottom: 25px;
+      margin-bottom: 50px;
       img {
         width: 100%;
+        border: 1px solid;
+        border-radius: 50%;
       }
     }
 
@@ -161,8 +151,7 @@ $dot-space: 27px;
     }
   }
 
-  // Parallax
-  .parallaxImg1 {
+  .parallaxImg2 {
     // Parallax
     background-image: url("../../assets/bg1.svg");
     background-position: center;
@@ -177,7 +166,7 @@ $dot-space: 27px;
     }
   }
 
-  .parallaxImg2 {
+  .parallaxImg3 {
     // Parallax
     background-image: url("../../assets/bg2.svg");
     background-position: center;

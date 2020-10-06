@@ -13,7 +13,7 @@ const Navbar = () => {
     <nav>
       <div className="nav-logo">
         <NavLink to="/">
-          <img src={require("../assets/logo-placeholder.svg")} alt="logo" />
+          <img src={require("../assets/cotton.svg")} alt="logo" />
         </NavLink>
       </div>
       <div
